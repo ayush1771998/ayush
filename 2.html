@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateName(){
+var num=document.myform.name.value;
+if (!isNaN(num)){
+  document.getElementById("sname").innerHTML="Enter alphabets only";
+}else{
+  document.getElementById("sname").innerHTML="";
+  }
+}
+function validateAge(){
+var num=document.myform.age.value;
+num = parseInt(num)
+if (isNaN(num)||num < 1|| num > 100){
+     document.getElementById("sage").innerHTML="Enter Numbers between 1 and 100 only";
+   
+}else{
+  document.getElementById("sage").innerHTML="";
+  }
+}
+function validateGender(){
+var num=document.myform.gender.value;
+if (num=='f' || num=='F' || num=='m' || num=='M'){
+    document.getElementById("sgender").innerHTML=""; 
+   
+}else{
+	document.getElementById("sgender").innerHTML="Enter m,M for Male --- & --- f,F for Female";
+  
+  }
+}
+</script>
+</head>
+
+<body>
+<form name="myform">
+NAME: <input type="text" name="name" onBlur="validateName()"><span id="sname"></span><br/>
+AGE: <input type="text" name="age" onBlur="validateAge()"><span id="sage"></span><br/>
+GENDER: <input type="text" name="gender" onBlur="validateGender()"><span id="sgender"></span><br/>
+EMAIL-ID: <input type="text" name="email-id"><br/>
+NUMBER: <input type="text" name="number"><br/>
+Country: <input type="text" name="country"><br/>
+<input type="submit" value="submit">
+</form>
+
+</body>
+</html>
